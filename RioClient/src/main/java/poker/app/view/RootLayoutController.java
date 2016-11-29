@@ -111,66 +111,18 @@ public class RootLayoutController implements Initializable {
 		mnuBet.getItems().add(rmi1);
 		mnuBet.getItems().add(rmi2);
 		
-		//	TODO - Lab #5...  Add a new menu item that will display the betting rules...
+		/*//	Lab #5...  Add a new menu item that will display the betting rules...
 		//	Two choices:
 		//	No Limit (set this as default)
 		//	Pot Limit (this is NOT the default)
 		//	Group them together with a Toggle Group
 		//	Write a method to return which is selected.. .check out getRuleName()
-
+*/
 	}
     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 	}
-
 
 	@FXML
 	private void handleAbout() {
@@ -189,9 +141,5 @@ public class RootLayoutController implements Initializable {
 	private void handleExit() {
 		System.exit(0);
 	}
-
-
-
-	
 
 }

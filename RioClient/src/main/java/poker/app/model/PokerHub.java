@@ -80,7 +80,6 @@ public class PokerHub extends Hub {
 				// Set the order of players
 				HubGamePlay.setiActOrder(GamePlay.GetOrder(pDealer.getiPlayerPosition()));
 
-
 			case Draw:
 
 				HubGamePlay

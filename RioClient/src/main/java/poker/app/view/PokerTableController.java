@@ -319,15 +319,8 @@ public class PokerTableController implements Initializable {
 								System.out.println("y:" + bndCardDealt.getMinY());								
 							}
 							
-							
 							//ivDealtCard = (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() -1);
-							
-
-
-							
-							
-							
-							
+								
 						} else {
 							this.getCardHBox(p.getiPlayerPosition()).getChildren().add(BuildImage(0));
 							ivDealtCard = (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() -1);							
