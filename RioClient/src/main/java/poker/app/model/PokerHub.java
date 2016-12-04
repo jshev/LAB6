@@ -106,7 +106,8 @@ public class PokerHub extends Hub {
 							}
 						}
 					}
-				} else if (cd.getCardDestination() == eCardDestination.Community) {
+				}
+				else if (cd.getCardDestination() == eCardDestination.Community) {
 					System.out.println("Community");
 					Player p = HubGamePlay.getPlayerCommon();
 					if (p != null) {

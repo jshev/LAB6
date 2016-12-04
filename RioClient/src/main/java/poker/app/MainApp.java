@@ -298,7 +298,6 @@ public class MainApp extends Application {
 			});
 		}
 		
-		
 		@Override
 		/*
 		 * serverShutdown - Call the hard exit.
@@ -311,6 +310,5 @@ public class MainApp extends Application {
 			});
 	    }
 	
-
 	}
 }
