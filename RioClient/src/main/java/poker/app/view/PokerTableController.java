@@ -265,20 +265,10 @@ public class PokerTableController implements Initializable {
 
 	public void Handle_GameState(GamePlay HubPokerGame) {
 		// TODO: Deal the cards to the client(s)
-
+		
 		GamePlay.StateOfGamePlay(HubPokerGame);
-
+		
 		eDrawCount eDrawCnt = HubPokerGame.geteDrawCountLast();
-
-		if (eDrawCnt == eDrawCount.FIRST) {
-			hboxP1Cards.getChildren().clear();
-			hboxP2Cards.getChildren().clear();
-			hboxP3Cards.getChildren().clear();
-			hboxP4Cards.getChildren().clear();
-			hboxCommunity.getChildren().clear();
-			lblWinningPlayer.setText("");
-			lblWinningHand.setText("");
-		}
 
 		System.out.println("State of game: " + HubPokerGame.geteGameState());
 		CardDraw cd = HubPokerGame.getRule().GetDrawCard(eDrawCnt);
