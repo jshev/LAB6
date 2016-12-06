@@ -82,7 +82,7 @@ public class PokerHub extends Hub {
 				
 				resetOutput();
 				sendToAll(HubGamePlay);
-				break;
+				break; 
 			case ScoreGame:
 				// Am I at the end of the game?
 				try {

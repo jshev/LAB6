@@ -273,7 +273,7 @@ public class PokerTableController implements Initializable {
 		System.out.println("State of game: " + HubPokerGame.geteGameState());
 		CardDraw cd = HubPokerGame.getRule().GetDrawCard(eDrawCnt);
 
-		ImageView ivDealtCard = null;
+		ImageView ivDealtCard = null; 
 		
 		Hand hcheck = HubPokerGame.getPlayerHand(mainApp.getPlayer());
 		for (Card c : hcheck.getCardsInHand()) {
