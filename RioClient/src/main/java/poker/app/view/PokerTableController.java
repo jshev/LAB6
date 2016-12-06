@@ -265,16 +265,26 @@ public class PokerTableController implements Initializable {
 
 	public void Handle_GameState(GamePlay HubPokerGame) {
 		// TODO: Deal the cards to the client(s)
-		
+
 		GamePlay.StateOfGamePlay(HubPokerGame);
-		
+
 		eDrawCount eDrawCnt = HubPokerGame.geteDrawCountLast();
+
+		if (eDrawCnt == eDrawCount.FIRST) {
+			hboxP1Cards.getChildren().clear();
+			hboxP2Cards.getChildren().clear();
+			hboxP3Cards.getChildren().clear();
+			hboxP4Cards.getChildren().clear();
+			hboxCommunity.getChildren().clear();
+			lblWinningPlayer.setText("");
+			lblWinningHand.setText("");
+		}
 
 		System.out.println("State of game: " + HubPokerGame.geteGameState());
 		CardDraw cd = HubPokerGame.getRule().GetDrawCard(eDrawCnt);
 
-		ImageView ivDealtCard = null; 
-		
+		ImageView ivDealtCard = null;
+
 		Hand hcheck = HubPokerGame.getPlayerHand(mainApp.getPlayer());
 		for (Card c : hcheck.getCardsInHand()) {
 			System.out.println(c.geteRank() + " " + c.geteSuit());
@@ -292,28 +302,30 @@ public class PokerTableController implements Initializable {
 					for (Card c : cardsDrawn) {
 						if (p.getPlayerID().equals(mainApp.getPlayer().getPlayerID())) {
 							this.getCardHBox(p.getiPlayerPosition()).getChildren().add(BuildImage(c.getiCardNbr()));
-							
+
 							System.out.println("HBox");
 							HBox hb = this.getCardHBox(p.getiPlayerPosition());
 							Bounds bndCardDealt2 = hb.localToScene(hb.getBoundsInLocal());
 							System.out.println("x:" + bndCardDealt2.getMinX());
-							System.out.println("y:" + bndCardDealt2.getMinY());	
-							
+							System.out.println("y:" + bndCardDealt2.getMinY());
+
 							int iCnt = 0;
-							for (Object o: this.getCardHBox(p.getiPlayerPosition()).getChildren())
-							{
+							for (Object o : this.getCardHBox(p.getiPlayerPosition()).getChildren()) {
 								System.out.println("ImageView : " + iCnt++);
-								ImageView iv  = (ImageView)o;
+								ImageView iv = (ImageView) o;
 								Bounds bndCardDealt = iv.localToScene(iv.getBoundsInLocal());
 								System.out.println("x:" + bndCardDealt.getMinX());
-								System.out.println("y:" + bndCardDealt.getMinY());								
+								System.out.println("y:" + bndCardDealt.getMinY());
 							}
-							
-							//ivDealtCard = (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() -1);
-								
+
+							// ivDealtCard =
+							// (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size()
+							// -1);
+
 						} else {
 							this.getCardHBox(p.getiPlayerPosition()).getChildren().add(BuildImage(0));
-							ivDealtCard = (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() -1);							
+							ivDealtCard = (ImageView) this.getCardHBox(p.getiPlayerPosition()).getChildren()
+									.get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() - 1);
 						}
 					}
 				}
@@ -324,10 +336,10 @@ public class PokerTableController implements Initializable {
 						eCardDestination.Community);
 				for (Card c : cardsDrawn) {
 					this.getCardHBox(0).getChildren().add(BuildImage(c.getiCardNbr()));
-					ivDealtCard = (ImageView)this.getCardHBox(0).getChildren().get(this.getCardHBox(0).getChildren().size() -1);
+					ivDealtCard = (ImageView) this.getCardHBox(0).getChildren()
+							.get(this.getCardHBox(0).getChildren().size() - 1);
 				}
 			}
-			
 
 		}
 
